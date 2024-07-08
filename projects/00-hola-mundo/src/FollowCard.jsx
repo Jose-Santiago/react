@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-export function FollowCardComponent({ children, userName}){
-    const [isFollowing, setIsFollowing] = useState(false);
+export function FollowCardComponent({ children, userName, initialIsFollowing}){
+    const [isFollowing, setIsFollowing] = useState(initialIsFollowing);
 
     const text = isFollowing ? 'Siguiendo' : 'Seguir';
     const buttonClassName = isFollowing 

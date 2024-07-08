@@ -4,7 +4,7 @@ import { FollowCardComponent } from './FollowCard';
 export function App(){
     return (
         <div className='App'>
-            <FollowCardComponent userName='midudev'>
+            <FollowCardComponent userName='midudev' initialIsFollowing={true}>
                 Miguel Angel Duran
             </FollowCardComponent>
 
