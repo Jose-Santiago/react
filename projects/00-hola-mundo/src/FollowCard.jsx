@@ -1,4 +1,17 @@
-export function FollowCardComponent({ children, formatUserName, userName, isFollowing }){
+import { useState } from "react";
+
+export function FollowCardComponent({ children, userName}){
+    const [isFollowing, setIsFollowing] = useState(false);
+
+    const text = isFollowing ? 'Siguiendo' : 'Seguir';
+    const buttonClassName = isFollowing 
+        ? 'followCard-button is-following' 
+        : 'followCard-button';
+
+    const handleClick = () => {
+        setIsFollowing(!isFollowing);
+    };
+
     return(
         <article className='followCard'>
             <header className='followCard-header'>
@@ -8,13 +21,13 @@ export function FollowCardComponent({ children, formatUserName, userName, isFoll
                     src={`https://unavatar.io/${userName}`} />
                 <div className='followCard-div-dataUser'>
                     <strong>{children}</strong>
-                    <span className='followCard-div-dataUser-span'>{formatUserName(userName)}</span>
+                    <span className='followCard-div-dataUser-span'>@{userName}</span>
                 </div>
             </header>
 
             <aside>
-                <button className='followCard-button'>
-                    seguir
+                <button className={buttonClassName} onClick={handleClick}>
+                    {text}
                 </button>
             </aside>
         </article>

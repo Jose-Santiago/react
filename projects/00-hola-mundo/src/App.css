@@ -28,9 +28,22 @@
 }
 
 .followCard-button {
+    cursor: pointer;
     margin-left: 16px;
     border: 0;
     border-radius: 999px;
     padding: 6px 16px;
     font-weight: bold;
+    border: 1px solid #000;
+    transition: .3s ease background-color;
+}
+
+.followCard-button.is-following{
+    border: 1px solid red;
+}
+.followCard-button:hover {
+    background-color: #09f;
+}
+.followCard-button.is-following:hover{
+    background: red;
 }
